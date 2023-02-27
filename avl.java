@@ -1,5 +1,6 @@
 import java.util.*;
 
+// Node class to simulate AVL Tree
 class Node
 {
   int data;
@@ -30,13 +31,14 @@ class avlTree {
   
     }
 
+  // Checks if AVL is balanced 
   public void checkBalance (Node head)
   {
     if (head == null)
     {
       return;
     }
-    //System.out.println("checking balance of " + head.data);
+ 
 
     if (head.left == null && head.right == null)
     {
@@ -56,7 +58,6 @@ class avlTree {
     if (head.left != null && head.right == null)
     {
       head.maxHeight = head.left.maxHeight + 1;
-      //System.out.println("head left is " + head.leftHeight);
       if (1 + head.left.maxHeight > 1) {
         this.rotation = true;
         return;
@@ -75,7 +76,7 @@ class avlTree {
     checkBalance(head.right);
   }
 }
-
+  
   public class avl {
     public static void main(String[] args) {
       Scanner input = new Scanner(System.in);
